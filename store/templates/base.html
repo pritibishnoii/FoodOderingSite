@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+       <style>
+    .navbar-nav > li{
+  padding-left:30px;
+  padding-right:30px;
+}
+    .one-edge-shadow {
+              box-shadow: 0 8px 2px -5px rgb(246, 245, 245);
+}
+.display-8{
+  font-weight: 200;
+  font-size: 30px;
+}
+  </style>
+
+  </head>
+  <body>
+
+  <nav class="alert alert-danger navbar navbar-expand-lg  mt-4 >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">FOOD GALLERY</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/store">Store</a>
+        </li>
+      {% if request.session.customer %}
+       </li>
+           <li class="nav-item ">
+          <a class="btn btn-primary" href="/cart">Cart
+           <span class="badge badge-light">{{request.session.cart.keys|length}}</span>
+         </a>
+        </li>
+
+
+<li class="nav-item">
+          <a class="btn btn-primary" aria-current="page" href="/logout">Logout</a>
+        </li>
+
+      <li class="nav-item">
+          <a class="btn btn-primary" aria-current="page" href="/orders">Orders</a>
+        </li>
+      </ul>
+      {% else %}
+
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="btn btn-primary pd-4" aria-current="page" href="/signup">Signup</a>
+        </li>
+
+
+         <li class="nav-item">
+          <a class="btn btn-primary" aria-current="page" href="/login">Login</a>
+        </li>
+            <li class="nav-item">
+          <a class="btn btn-primary" aria-current="page" href="/cart">Cart</a>
+        </li>
+{% endif %}
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+
+ <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+how to install django globally
+To install Django globally, follow these steps:
+
+Make sure you have Python installed on your system. If not, download and install it from the official website (https://www.python.org/downloads/).
+Install pip, the Python package installer. If you already have it installed, skip this step. To install pip, use the following command:
+python -m ensurepip --upgrade
+
+Create a virtual environment to isolate your project dependencies. This step is optional but recommended, as it helps avoid conflicts between different versions of Django or other packages. To create a virtual environment, use the following command:
+python -m venv myenv
+
+Replace “myenv” with the name you want to give to your virtual environment.
+
+Activate the virtual environment. The command to activate the virtual environment depends on your operating system and shell. For example:
+On Windows (cmd):
+myenv\Scripts\activate
+
+On Windows (PowerShell):
+myenv\Scripts\Activate.ps1
+
+
+On macOS/Linux (Bash):
+source myenv/bin/activate
+
+Once the virtual environment is activated, install Django globally using pip:
+pip install django
+
+This command will install the latest stable version of Django. If you want to install a specific version, use this format:
+
+pip install django==version_number
+
+Replace “version_number” with the desired Django version (e.g., “4.1.2”).
+
+Verify the installation by checking the Django version:
+django-admin --version
+
+This command should display the Django version you just installed.
+
+Remember to deactivate the virtual environment when you’re done working with it:
+
+deactivate
